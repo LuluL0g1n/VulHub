@@ -1,3 +1,4 @@
+## Step 1
 Máy LupinOne
 
 ![image](https://user-images.githubusercontent.com/97771705/222322292-994cb730-ae7e-4707-a1e6-db79ccfe6bd3.png)
@@ -21,6 +22,7 @@ Lỗi 404 not found, tiếp tục nhấn f12 để xem source code
 
 ![image](https://user-images.githubusercontent.com/97771705/222323930-96023d8a-aa11-4335-84b0-dcdb131c1279.png)
 
+## Step 2
 Tiến hành fuzzing để tìm kiếm thư mục ẩn
 Ta dùng lệnh **ffuf -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u 'http://10.0.2.4/~FUZZ'**
 + Sử dụng công cụ **ffuf** để thực hiện directory attack, tìm kiếm xem có thư mục nào có tên trong list hay không
@@ -57,5 +59,25 @@ Giải mã base 58, ta được open ssh private key
 
 ![image](https://user-images.githubusercontent.com/97771705/222331415-ea5b41dc-6563-4817-9122-1c0d64906cef.png)
 
+## Step 3
 Private key này có passphrase bảo vệ. Hiểu đơn giản passphrase là một mật khẩu được sử dụng để bảo vệ và mã hóa private key SSH. Khi tạo ra private key, người dùng có thể tạo ra một passphrase để đảm bảo rằng chỉ có người dùng được ủy quyền mới có thể sử dụng private key. Khi một người dùng muốn sử dụng private key, họ sẽ được yêu cầu nhập passphrase để giải mã key trước khi sử dụng nó. Điều này giúp đảm bảo an toàn cho key trong trường hợp nó bị đánh cắp hoặc lộ ra ngoài.
 
+Lưu SSH Private Key vào 1 file **key.txt**
+
+Sử dụng tool **John the Ripper** để Brute-force passphrase của SSH Private Key
+
+Command **ssh2john** của John the Ripper được sử dụng để chuyển đổi private key của SSH sang định dạng mà John the Ripper có thể sử dụng để tấn công bằng cách thử các passphrase khác nhau.
+
+Sử dụng lệnh **/usr/share/john/ssh2john.py key.txt > pass.txt**
+
+![image](https://user-images.githubusercontent.com/97771705/222358294-2edff0bb-f19d-4c30-846e-919554270e0e.png)
+
+Trong **~secret** cũng đề cập tới fasttract. Đây là 1 file có sẵn trong wordlist của kali, có thể sử dụng để bruteforce
+
+Sử dụng lệnh **john pass.txt --wordlist=/usr/share/wordlist/fasttract.txt**
+
+![image](https://user-images.githubusercontent.com/97771705/222359062-465d986e-97f0-42a2-9432-87b0f89e346c.png)
+
+Bruteforce thành công passphrase của SSH private key! (P@55w0rd!)
+
+## Step 4
