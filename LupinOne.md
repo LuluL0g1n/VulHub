@@ -101,3 +101,31 @@ Tìm kiếm thư mục của máy
 > 3mp!r3{I_See_That_You_Manage_To_Get_My_Bunny}
 
 ## Step 5
+Dùng vài lệnh cơ bản để kiểm tra tên người dùng và các thư mục thông thường
+
+![image](https://user-images.githubusercontent.com/97771705/222367163-323cb1fe-e204-4379-97d2-72c42f03aaf5.png)
+
+
+Sử dụng lệnh **sudo -l** để xem quyền của user icex64
+
+![image](https://user-images.githubusercontent.com/97771705/222366966-1e5d0434-28a5-425e-ba74-88a62990e783.png)
+
+icex64 có thể run 1 tập tin python. Đọc thử
+
+![image](https://user-images.githubusercontent.com/97771705/222367836-7f6f99a7-0a38-4ec2-ad74-c265365d97cf.png)
+
+Ta thử tìm kiếm file có quyền rwx cho tất cả người dùng bằng lệnh **find / -type f -perm -ug=rwx**
+![image](https://user-images.githubusercontent.com/97771705/222369987-c0272716-e84f-41f7-9bc2-8db7f23722f2.png)
+
+File python mà icex64 có thể run chứa đoạn import webbrowser, đây cũng có tập tin webbrowser.py
+
+Xem quyền sở hữu của file webbrowser.py -> người dùng root
+![image](https://user-images.githubusercontent.com/97771705/222373300-17896e59-2829-45f9-b0e7-5b829d44a25e.png)
+
+Quyền của file này là 777, tức là bản thân icex64 cũng có thể chỉnh sửa, thực thi file -> bắt đầu leo thang đặc quyền thông qua Python Library Hijacking technique
+
+## Step 6
+Sử dụng lệnh nano để chỉnh sửa tệp. Thêm **os.system("/bin/bash")**
+![image](https://user-images.githubusercontent.com/97771705/222376371-137c621a-6cf8-49e0-a1cd-6a9f62cc83de.png)
+
+
