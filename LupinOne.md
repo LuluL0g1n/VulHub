@@ -81,3 +81,23 @@ Sử dụng lệnh **john pass.txt --wordlist=/usr/share/wordlist/fasttract.txt*
 Bruteforce thành công passphrase của SSH private key! (P@55w0rd!)
 
 ## Step 4
+Sử dụng lệnh **ssh -i key.txt icex64@10.0.2.4**
++ **-i key.txt** chỉ định đường dẫn tới file chứa private key để đăng nhập vào máy chủ từ xa. File key này sẽ được sử dụng để xác thực cho việc đăng nhập, thay vì sử dụng mật khẩu.
++ icex64 là tên người dùng trên máy chủ từ xa mà ta muốn đăng nhập.
++ 10.0.2.4 là địa chỉ IP của máy chủ từ xa mà ta muốn truy cập.
+
+Sau khi nhập đúng passphrase, đăng nhập thành công LupinOne
+
+![image](https://user-images.githubusercontent.com/97771705/222363678-787c115d-bc33-4bcc-9898-c8cab33af860.png)
+
+Tìm kiếm thư mục của máy 
+
+![image](https://user-images.githubusercontent.com/97771705/222363964-ecf32a13-7716-4305-910b-e1f9a16261c1.png)
+
+Đọc **user.txt** ta được flag đầu tiên
+
+![image](https://user-images.githubusercontent.com/97771705/222364174-a1f92062-8d93-4db0-85a8-426f21d94908.png)
+
+> 3mp!r3{I_See_That_You_Manage_To_Get_My_Bunny}
+
+## Step 5
