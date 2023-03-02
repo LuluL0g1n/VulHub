@@ -1,0 +1,61 @@
+Máy LupinOne
+
+![image](https://user-images.githubusercontent.com/97771705/222322292-994cb730-ae7e-4707-a1e6-db79ccfe6bd3.png)
+
+Tại máy Kali, nhập lệnh **netdiscover -r 10.0.2.0/24** để tìm kiếm ip của máy Lupin
+
+![image](https://user-images.githubusercontent.com/97771705/222322533-3a8528a7-6f13-40ae-8411-47ff2b94e9ca.png)
+
+Sử dụng lệnh **nmap -sC -sV 10.0.2.4**
+
+![image](https://user-images.githubusercontent.com/97771705/222322990-7565d92b-022d-4686-97f1-0a41c2b17313.png)
+
+Ta tìm thấy 2 port:
+- Port 22 có SSH server
+- Port 80 có Apache Sever và 1 file /~myfiles
+
+Ta thử đọc ~myfiles
+![image](https://user-images.githubusercontent.com/97771705/222323732-50598bf4-b7bd-4fab-bd34-9e386fe4e7f1.png)
+
+Lỗi 404 not found, tiếp tục nhấn f12 để xem source code
+
+![image](https://user-images.githubusercontent.com/97771705/222323930-96023d8a-aa11-4335-84b0-dcdb131c1279.png)
+
+Tiến hành fuzzing để tìm kiếm thư mục ẩn
+Ta dùng lệnh **ffuf -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u 'http://10.0.2.4/~FUZZ'**
++ Sử dụng công cụ **ffuf** để thực hiện directory attack, tìm kiếm xem có thư mục nào có tên trong list hay không
++ **-c** là khi tìm thấy thì in màu nổi bật hơn (như hình thì là màu xanh)
++ **-w** là path tới tập tin danh sách từ điển đối chiếu. Trên kali có sẵn tại path **/usr/share/wordlists/dirbuster/**, và ta chọn tệp **directory-list-2.3-small.txt**
++ **-u** là URL muốn fuzz, trong đó  **FUZZ** là vị trí cần tìm 
++ **~** được sử  dụng cho cả thư mục lẫn tệp
+
+![image](https://user-images.githubusercontent.com/97771705/222328117-df4ea8bb-07cc-4ef3-b513-43801cdcae9a.png)
+
+![image](https://user-images.githubusercontent.com/97771705/222328143-f96fd0da-7054-4640-ba3d-6f82b262d87d.png)
+
+Truy cập **http://10.0.2.4/~secret** 
+
+![image](https://user-images.githubusercontent.com/97771705/222328385-2bc8f2aa-75bf-4985-b334-a8b2c51efb95.png)
+
+Thông tin cho ta biết SSH private key đang nằm đâu đó trong thư mục này. Ta phải tìm và crack passphrase của private key đó
+Ta dùng lệnh **ffuf -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u 'http://10.0.2.4/~secret/.FUZZ' -e .txt,.html**
++ **.** sử dụng cho tệp
++ **-e .txt,.html** để tìm kiếm file với đuôi txt, html
+
+![image](https://user-images.githubusercontent.com/97771705/222330744-4bd68b23-7f11-437b-8878-4242bc1f951f.png)
+
+Ta tìm thấy file **mysecret.txt** 
+Truy cập thử 
+
+![image](https://user-images.githubusercontent.com/97771705/222330959-c0104c45-999b-4a47-bf4e-cf60e55e1ce3.png)
+
+Đưa lên dcode.fr, phát hiện đây là mã base58
+
+![image](https://user-images.githubusercontent.com/97771705/222331199-b8bc25b8-40a5-4ce5-9498-983b74712268.png)
+
+Giải mã base 58, ta được open ssh private key
+
+![image](https://user-images.githubusercontent.com/97771705/222331415-ea5b41dc-6563-4817-9122-1c0d64906cef.png)
+
+Private key này có passphrase bảo vệ. Hiểu đơn giản passphrase là một mật khẩu được sử dụng để bảo vệ và mã hóa private key SSH. Khi tạo ra private key, người dùng có thể tạo ra một passphrase để đảm bảo rằng chỉ có người dùng được ủy quyền mới có thể sử dụng private key. Khi một người dùng muốn sử dụng private key, họ sẽ được yêu cầu nhập passphrase để giải mã key trước khi sử dụng nó. Điều này giúp đảm bảo an toàn cho key trong trường hợp nó bị đánh cắp hoặc lộ ra ngoài.
+
