@@ -128,8 +128,13 @@ Quyền của file này là 777, tức là bản thân icex64 cũng có thể ch
 Sử dụng lệnh nano để chỉnh sửa tệp. Thêm **os.system("/bin/bash")**
 ![image](https://user-images.githubusercontent.com/97771705/222376371-137c621a-6cf8-49e0-a1cd-6a9f62cc83de.png)
 
+Nhập lệnh **sudo -u arsene /usr/lib/python3.9 /home/arsene/heist.py**
 ![image](https://user-images.githubusercontent.com/97771705/222379224-0d08f4ec-aa8c-4e69-881c-de6ef03cbad4.png)
 
+Xem 1 vài file trên home của arsene
 ![image](https://user-images.githubusercontent.com/97771705/222381533-ea7d720e-4c14-4377-bc9c-013b85778e7e.png)
+
+User arsene có quyền root thực thi file /usr/bin/pip
+![image](https://user-images.githubusercontent.com/97771705/222385595-4529dc20-92f1-4ac3-8a53-97dbf18e2b5c.png)
 
 
