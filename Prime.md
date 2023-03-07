@@ -27,7 +27,7 @@ Trang js yêu cầu có quền cao hơn để vào
 
 Trang wordpress không có gì kì lạ
 
-![image](https://user-images.githubusercontent.com/97771705/223304285-fd523af1-c1e2-4078-8a8b-f9049c167612.png)
+![image](https://user-images.githubusercontent.com/97771705/223431905-5bf7c1c5-c0e3-46c0-af6c-e6e97ce52f1c.png)
 
 Sử dụng lệnh gobuster để tìm các trang ẩn 
 
