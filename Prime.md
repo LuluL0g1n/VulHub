@@ -71,7 +71,21 @@ Ta tìm được value là dev
 
 ![image](https://user-images.githubusercontent.com/97771705/223311427-90a6129f-aaa4-4c23-8584-6efe31057f0c.png)
 
+![image](https://user-images.githubusercontent.com/97771705/223311994-f42cd4d4-1ea1-422f-9ca4-53e106d22a53.png)
 
+Nhưng tại sao tên value là dev, nó giống y hệt 1 folder của linux. Và nhắc đến folder của linux thì phải nhắc đến 1 path thường gặp nhất với những bài path travelsal /etc/passwd
+Thử nhập path đó vào url 
 
+![image](https://user-images.githubusercontent.com/97771705/223312437-46a45885-603c-4d67-848e-343b43de138e.png)
+
+Boom!! Phát hiện password.txt
+Đi theo path /home/saket/password.txt
+
+![image](https://user-images.githubusercontent.com/97771705/223312884-6e9b3ee3-5c5d-419f-ac28-298ed4833f3c.png)
+
+Password là follow_the_ippsec. Nhập thử vào máy Prime -> không phải pass. Vậy đây là pass của cái gì?
+ Trước chúng ta dò được 1 trang login của wp, đến lúc xài rồi.
+ 
+ 
 
 
