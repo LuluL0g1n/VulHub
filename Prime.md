@@ -86,6 +86,15 @@ Boom!! Phát hiện password.txt
 Password là follow_the_ippsec. Nhập thử vào máy Prime -> không phải pass. Vậy đây là pass của cái gì?
  Trước chúng ta dò được 1 trang login của wp, đến lúc xài rồi.
  
+ Với username là victor và pass là follow_the_ippsec
+ 
+ ![image](https://user-images.githubusercontent.com/97771705/223432311-3b8ed0af-34b8-4d6f-8a27-67aa81ab738f.png)
+
+ Tại theme editor, tìm thấy secret.php
+ 
+ ![image](https://user-images.githubusercontent.com/97771705/223432858-3c652fd4-57c3-4a88-9dbc-3b345756d3e4.png)
+
+
  
 
 
