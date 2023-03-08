@@ -73,6 +73,8 @@ Hoặc dùng cách ssh cho pro :)
 
 ![image](https://user-images.githubusercontent.com/97771705/223422976-1e9f8cb9-08a4-4f94-92a9-7d74e86b6349.png)
 
+![image](https://user-images.githubusercontent.com/97771705/223601249-a9ecd891-e0ba-410b-b8e9-838176fea35c.png)
+
 Tìm kiếm loanh quanh các thư mục -> nhận được flag đầu tiên
 
 ![image](https://user-images.githubusercontent.com/97771705/223423539-fb08405f-35fd-4012-a371-6f0a2f6ef8cd.png)
