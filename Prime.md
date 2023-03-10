@@ -94,7 +94,42 @@ Password là follow_the_ippsec. Nhập thử vào máy Prime -> không phải pa
  
  ![image](https://user-images.githubusercontent.com/97771705/223432858-3c652fd4-57c3-4a88-9dbc-3b345756d3e4.png)
 
+Secret.php cho phép nhập văn bản -> có thể lợi dụng để up reverse shell
 
- 
+## Step 4
+(Từ đoạn này đổi máy: máy kali là 10.0.2.15, máy prime là 10.0.2.5)
+
+Trên kali có sẵn một file reverse shell php tại /usr/share/webshells/php/php-reverse-shell.php
+
+Copy text của file đó vào secret.php của wordpress theme editor và sứ ip và port
+
+![image](https://user-images.githubusercontent.com/97771705/224310901-ccc47d4b-5c64-4a82-bedb-202404041675.png)
+
+Tại root kali
+
+![image](https://user-images.githubusercontent.com/97771705/224311108-f94f18d9-31d5-44b0-b491-f2ac5323a6d9.png)
+
+Trên browser, truy cập trang http://10.0.2.5/wordpress/wp-content/themes/twentynineteen/secret.php
+
+Ngay lúc đó, tại terminal
+
+![image](https://user-images.githubusercontent.com/97771705/224312233-1bd453d9-9f3e-4a3c-b3a1-747974286c23.png)
+
+Tìm được flag đầu tiên
+
+![image](https://user-images.githubusercontent.com/97771705/224312612-6f90b555-e86d-4de5-a967-a9af17d30bfc.png)
+
+## Step 5
+Truy cập thử folder victor nhưng không đủ quyền 
+
+![image](https://user-images.githubusercontent.com/97771705/224312781-334b0205-cc15-40f7-9ba6-9f488fc48080.png)
+
+Tìm kiếm phiên bản kernel 
+
+![image](https://user-images.githubusercontent.com/97771705/224314063-13fd798c-4204-4784-b232-b40c7c9d2567.png)
+
+
+
+
 
 
