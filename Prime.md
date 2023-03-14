@@ -128,6 +128,9 @@ Tìm kiếm phiên bản kernel
 
 ![image](https://user-images.githubusercontent.com/97771705/224314063-13fd798c-4204-4784-b232-b40c7c9d2567.png)
 
+Tìm kiếm trên Google với từ khóa 4.10.0-28 generic exploit -> tìm thấy trang web có code exploit
+
+https://www.rapid7.com/db/modules/exploit/linux/local/bpf_sign_extension_priv_esc/
 
 
 
