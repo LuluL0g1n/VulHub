@@ -78,5 +78,42 @@ Kết quả:
 
 ![image](https://user-images.githubusercontent.com/97771705/225013005-e82b7184-424c-4aaa-a84b-02c342d90d31.png)
 
+![image](https://user-images.githubusercontent.com/97771705/225692756-136d2f24-a5e0-42a9-a03e-2c3ea2d2abef.png)
+
+Vào thư mục john
+
+![image](https://user-images.githubusercontent.com/97771705/225692527-af3ad033-cce8-41e5-926c-e11564a292a2.png)
+
+Thư mục .ssh ta có quyền read và write, nhưng không cho ta đọc id_rsa
+
+![image](https://user-images.githubusercontent.com/97771705/225693957-356deb89-fc99-4e11-af7b-51b3c21c5064.png)
+
+Để ý thấy rằng file toto có set quyền SUID, thực thi file này thì ta thấy chương trình run command id với userid là 1001(john), tức là chương trình chạy command id với quyền của john
+
+![image](https://user-images.githubusercontent.com/97771705/225694430-92798b9e-d0a0-4a55-83c1-db75aa299fd8.png)
+
+Ta ghi /bin/bash vào file id tự tạo ở tmp và chèn thư mục tmp lên đầu $PATH. Khi thực thi 1 command trong Linux, hệ thống sẽ tìm kiếm lệnh trong các đường dẫn được khai báo trong biến môi trường PATH, theo thứ tự từ trái sang phải. Nếu tìm thấy lệnh ở nhiều đường dẫn trong biến môi trường PATH thì đường dẫn nào tìm thấy trước từ trái sang phải sẽ được ưu tiên hơn.
+
+> echo '/bin/bash' > /tmp/id; chmod +x /tmp/id; export PATH=/tmp:$PATH
+
+Flag đầu :)
+
+![image](https://user-images.githubusercontent.com/97771705/225697086-107a6060-f30b-4933-ab69-546d93d8afe9.png)
+
+## Step 3
+Trong folder john còn 1 file password. Dùng  lệnh sudo -l để kiểm tra danh sách các quyền hạn mà user có thể thực thi bằng sudo trên hệ thống
+
+![image](https://user-images.githubusercontent.com/97771705/225698221-caced74f-a931-4d3d-aa69-96854154a3aa.png)
+
+Có thể thực thi file python3 bằng quyền root :) . Hơn nữa với file file.py ta có quyền write :)
+
+Write vào file rồi run là xong rồi
+
+> echo 'import os;os.system("/bin/bash")' > file.py
+
+> sudo /usr/bin/python3 /home/john/file.py
+
+![image](https://user-images.githubusercontent.com/97771705/225699477-b8795e11-45a7-4538-8df9-acf17067118c.png)
+
 
 
