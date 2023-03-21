@@ -58,7 +58,7 @@ Tìm kiếm trên Google, phát hiện Fuel CMS có lỗ hổng RCE tại nhữn
 
 https://github.com/padsalatushal/CVE-2018-16763
 
-Git clone code trên trang github trên về máy kali, sau đó chạy file python của git đó
+Git clone code trên trang github trên về máy kali, sau đó chạy file python của git đó (ở đây là 10.0.2.4 là do xài máy khác để làm nên hơi lú)
 
 ![image](https://user-images.githubusercontent.com/97771705/223417730-70b91543-6dd8-416a-b789-594e6db99a61.png)
 
