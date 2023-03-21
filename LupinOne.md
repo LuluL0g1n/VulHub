@@ -129,6 +129,12 @@ Quyền của file này là 777, tức là bản thân icex64 cũng có thể ch
 Sử dụng lệnh nano để chỉnh sửa tệp. Thêm **os.system("/bin/bash")**
 ![image](https://user-images.githubusercontent.com/97771705/222376371-137c621a-6cf8-49e0-a1cd-6a9f62cc83de.png)
 
+```
+Trong Python, "os.system()" là một hàm cho phép thực thi các lệnh hệ thống hoặc các tiến trình bên ngoài. Khi chạy lệnh "os.system("/bin/bash")", nó sẽ thực thi lệnh "/bin/bash" trên hệ thống.
+
+Lệnh "/bin/bash" được sử dụng để mở một cửa sổ dòng lệnh Bash trên hệ thống Linux hoặc macOS. Nếu lệnh được thực thi thành công, một cửa sổ dòng lệnh Bash mới sẽ được mở ra, cho phép người dùng nhập các lệnh để thực thi trên hệ thống.
+```
+
 Nhập lệnh **sudo -u arsene /usr/lib/python3.9 /home/arsene/heist.py**
 ![image](https://user-images.githubusercontent.com/97771705/222379224-0d08f4ec-aa8c-4e69-881c-de6ef03cbad4.png)
 
