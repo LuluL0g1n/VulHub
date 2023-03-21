@@ -96,6 +96,10 @@ Trong số các folder khởi đầu của máy Phineas, chỉ có duy nhất /w
 
 Có thể thấy nó bị dính lỗi Insecure Deserialization
 
+```
+App sử dụng thư viện flask để xử lý các request gửi đến. Khi có request với method POST được gửi tới path /heaven cùng param awesome, app sẽ decode base64 giá trị trên param awesome, sau đó hàm pickle.loads() sẽ deserialize dữ liệu vừa decode được. Do không kiểm tra dữ liệu được gửi đến trong param awesome khiến app dễ bị lỗ hổng insecure deserialization và kết quả có thể là RCE.
+```
+
 Dùng lệnh **ip a** để tìm kiếm ip của máy phineas khi ta ssh trên kali ->10.0.2.6
 
 Command exploit: tại terminal root kali
