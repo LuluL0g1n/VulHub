@@ -16,6 +16,8 @@ Tìm path ẩn bằng gobuster
 
 >gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.0.2.5 -x html,php,txt
 
+-dir: Chế độ dò tìm thư mục của gobuster.
+
 ```
 Gobuster là một công cụ dò tìm thư mục và tệp tin trên các ứng dụng web. Nó hoạt động bằng cách gửi các yêu cầu HTTP tới các URL cụ thể, sau đó phân tích và hiển thị kết quả trả về từ máy chủ web. Gobuster hỗ trợ các phương thức HTTP như GET, POST, HEAD, OPTIONS, PUT, DELETE và CONNECT.
 ```
