@@ -16,6 +16,7 @@ Ta tìm thấy 2 port:
 - Port 80 có Apache Sever và 1 file /~myfiles
 
 Ta thử đọc ~myfiles
+
 ![image](https://user-images.githubusercontent.com/97771705/222323732-50598bf4-b7bd-4fab-bd34-9e386fe4e7f1.png)
 
 Lỗi 404 not found, tiếp tục nhấn f12 để xem source code
