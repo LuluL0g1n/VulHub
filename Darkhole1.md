@@ -84,7 +84,7 @@ Vào thư mục john
 
 ![image](https://user-images.githubusercontent.com/97771705/225692527-af3ad033-cce8-41e5-926c-e11564a292a2.png)
 
-Thư mục .ssh ta có quyền read và write, nhưng không cho ta đọc id_rsa
+Vào thư mục .ssh, không cho ta đọc id_rsa
 
 ![image](https://user-images.githubusercontent.com/97771705/225693957-356deb89-fc99-4e11-af7b-51b3c21c5064.png)
 
