@@ -44,7 +44,7 @@ Phát hiện khá nhiều trang hay ho
 
 Trang /fuel mặc định là /fuel/start ->có vẻ như lại cần gobuster :)
 
-> gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.0.2.5/structure -x html,php,txt
+> gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.0.2.5/structure/fuel -x html,php,txt
 
 Trang index.php chuyển hướng sang start
 
