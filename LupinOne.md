@@ -8,7 +8,9 @@ Tại máy Kali, nhập lệnh **netdiscover -r 10.0.2.0/24** để tìm kiếm 
 ![image](https://user-images.githubusercontent.com/97771705/222322533-3a8528a7-6f13-40ae-8411-47ff2b94e9ca.png)
 
 Sử dụng lệnh **nmap -sC -sV 10.0.2.4**
+
 -sC: Chạy các scripts mặc định để tìm kiếm các lỗ hổng
+
 -sV: Hiển thị cả version của các dịch vụ đang chạy trên port mở
 
 ![image](https://user-images.githubusercontent.com/97771705/222322990-7565d92b-022d-4686-97f1-0a41c2b17313.png)
