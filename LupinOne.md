@@ -123,7 +123,7 @@ File python mà icex64 có thể run chứa đoạn import webbrowser, đây cũ
 Xem quyền sở hữu của file webbrowser.py -> người dùng root
 ![image](https://user-images.githubusercontent.com/97771705/222373300-17896e59-2829-45f9-b0e7-5b829d44a25e.png)
 
-Quyền của file này là 777, tức là bản thân icex64 cũng có thể chỉnh sửa, thực thi file -> bắt đầu leo thang đặc quyền thông qua Python Library Hijacking technique
+Quyền của file này là 777, tức là bản thân icex64 cũng có thể chỉnh sửa, thực thi file -> bắt đầu leo thang đặc quyền.
 
 ## Step 6
 Sử dụng lệnh nano để chỉnh sửa tệp. Thêm **os.system("/bin/bash")**
