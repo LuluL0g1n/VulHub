@@ -90,6 +90,8 @@ Vào thư mục .ssh, không cho ta đọc id_rsa
 
 Để ý thấy rằng file toto có set quyền SUID, thực thi file này thì ta thấy chương trình run command id với userid là 1001(john), tức là chương trình chạy command id với quyền của john
 
+`SUID là viết tắt của Set User ID, là một thuộc tính trên các tập tin trên hệ thống Linux/Unix. Khi một tập tin được đặt thuộc tính SUID, nó được thiết lập để chạy với đặc quyền của chủ sở hữu của tập tin đó thay vì với đặc quyền của người sử dụng hiện tại.`
+
 ![image](https://user-images.githubusercontent.com/97771705/225694430-92798b9e-d0a0-4a55-83c1-db75aa299fd8.png)
 
 Ta ghi /bin/bash vào file id tự tạo ở tmp và chèn thư mục tmp lên đầu $PATH. Khi thực thi 1 command trong Linux, hệ thống sẽ tìm kiếm lệnh trong các đường dẫn được khai báo trong biến môi trường PATH, theo thứ tự từ trái sang phải. Nếu tìm thấy lệnh ở nhiều đường dẫn trong biến môi trường PATH thì đường dẫn nào tìm thấy trước từ trái sang phải sẽ được ưu tiên hơn.
