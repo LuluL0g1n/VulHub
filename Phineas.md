@@ -114,6 +114,9 @@ Tại terminal ssh phineas
 
 >curl -d "awesome=Ket_qua_tai_cau_lenh_python_tren" -X POST http://127.0.0.1:5000/heaven
 
+- -d: data gửi đi. ở đây là param awesome với value là kết quả của câu lệnh python
+- -X: tùy chọn method, có thể là GET,POST,... 
+
 Quay về terminal root kali
 
 ![image](https://user-images.githubusercontent.com/97771705/223911610-5bafd821-956c-492d-b454-0379404ad454.png)
