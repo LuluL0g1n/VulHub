@@ -107,7 +107,7 @@ Dùng vài lệnh cơ bản để kiểm tra tên người dùng và các thư m
 ![image](https://user-images.githubusercontent.com/97771705/222367163-323cb1fe-e204-4379-97d2-72c42f03aaf5.png)
 
 
-Sử dụng lệnh **sudo -l** để xem quyền của user icex64
+Sử dụng lệnh **sudo -l** để xem quyền của user icex64, nó sẽ hiển thị danh sách các lệnh mà người dùng hiện tại được phép thực thi với đặc quyền hạn của tài khoản root hoặc các tài khoản khác có quyền truy cập đặc biệt.
 
 ![image](https://user-images.githubusercontent.com/97771705/222366966-1e5d0434-28a5-425e-ba74-88a62990e783.png)
 
